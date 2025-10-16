@@ -1,6 +1,9 @@
 package com.example.useractivity
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +19,21 @@ class MainActivity2 : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        var buttonSalvar = findViewById<Button>(R.id.button_salvar)
+
+        buttonSalvar.setOnClickListener{
+            var nometext = findViewById<EditText>(R.id.edit_text_id).text
+            if(nometext.isEmpty()){
+                Toast.makeText(This,"Digite seu nome", Toast.LENGTH_LONG).show()
+            }else{
+                this.getSharedPreferences("motivação", MODE_PRIVATE)
+                var intent = intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+
+
+
     }
 }
