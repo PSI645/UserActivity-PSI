@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         var imagemSunny = findViewById<ImageView>(R.id.Imagem_sunny)
 
         imagemAll.setOnClickListener {
+            imagemAll.setColorFilter(ContextCompat.getColor(this, R.color.white))
             imagemHappy.setColorFilter(ContextCompat.getColor(this, R.color.black))
             imagemSunny.setColorFilter(ContextCompat.getColor(this, R.color.black))
             var frase = fraseRepository.getfrase(0)
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         imagemHappy.setOnClickListener {
+            imagemHappy.setColorFilter(ContextCompat.getColor(this, R.color.white))
             imagemAll.setColorFilter(ContextCompat.getColor(this, R.color.black))
             imagemSunny.setColorFilter(ContextCompat.getColor(this, R.color.black))
             var frase = fraseRepository.getfrase(1)
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         imagemSunny.setOnClickListener {
+            imagemSunny.setColorFilter(ContextCompat.getColor(this, R.color.white))
             imagemAll.setColorFilter(ContextCompat.getColor(this, R.color.black))
             imagemHappy.setColorFilter(ContextCompat.getColor(this, R.color.black))
             var frase = fraseRepository.getfrase(2)
